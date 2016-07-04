@@ -116,7 +116,7 @@
 	\end{itemize}
 \begin{proof}
 	~\newline
-	$\Rightarrow)$ El primer ítem es trivial. Por otro lado, dado $\e > 0$, se tienen $s - \e < s$, por lo que $s - e$ no es cota superior de $A$. O sea, existe $a \in A$ tal que $s-\e<a$, lo que prueba el segundo ítem.\newline
+	$\Rightarrow)$ El primer ítem es trivial. Por otro lado, dado $\e > 0$, se tienen $s - \e < s$, por lo que $s - \e$ no es cota superior de $A$. O sea, existe $a \in A$ tal que $s-\e<a$, lo que prueba el segundo ítem.\newline
 	~\newline
 	$\Leftarrow)$ Es necesario probar que $s$ es la cota superior más chica. Sea $s'$ una cota superior más chica que $s$ (O sea $s' < s$) y sea $\e=s-s'>0$. Esto es absurdo porque contradice la hipótesis de que para cualquier $\e>0$, existe $a\in A$ tal que $s-\e<a$.
 \end{proof}
@@ -125,7 +125,7 @@
 \newpage
 \section{Sucesiones}
 \begin{prop}
-	Si $s = sup\ A$ entonces existe una sucesión creciente ${a_n} \in A$ tal que $a_n \rightarrow s$. Si $s \not\in A$, se puede elegir $a_n$ estrictamente decreciente.
+	Si $s = sup\ A$ entonces existe una sucesión creciente ${a_n} \in A$ tal que $a_n \rightarrow s$. Si $s \not\in A$, se puede elegir $a_n$ estrictamente creciente.
 \begin{proof}
 	Si $s \in A$, basta tomar $a_n = s$ la sucesión constante (que, por definición es creciente). Si no, tomamos algún elemento $\overline{a_1} \in A$, y ponemos $a_1 := \overline{a_1}$. 
 	
@@ -273,14 +273,14 @@
 \end{prop}
 
 \begin{prop}
-	Sea $G:[a,b)\to\R$ una función creciente ($b$ puede ser $+\infty$). Entonces existe el límite $\displaystyle \lim_{x\to b^+}G(x)$. Además, este límite es finito si y sólo si $G$ es acotada superiormente.
+	Sea $G:[a,b)\to\R$ una función creciente ($b$ puede ser $+\infty$). Entonces existe el límite $\displaystyle \lim_{x\to b^-}G(x)$. Además, este límite es finito si y sólo si $G$ es acotada superiormente.
 	\begin{proof}
 		Sea $l=$ sup$\{G(x):x\in[a,b)\}$. Por definición de supremo, dado $\e>0$, existe $x_0 \in [a,b)$ tal que $l-G(x_0) < \e$. Si $|b-x| = b - x < \delta = b-x_0$, entonces $x\leq x_0$ y $G$ es creciente $G(x) \leq G(x_0)$. Entonces
 		\begin{center}
 			$l-G(x) \leq l-G(x_0) < \e$
 		\end{center}
 		lo que prueba que el límite existe y coincide con el supremo. En particular el límite es finito si y sólo si $G$ es acotada.
-		Entonces, $\displaystyle l=\lim_{x\to b^+}G(x)$
+		Entonces, $\displaystyle l=\lim_{x\to b^-}G(x)$
 	\end{proof}
 \end{prop}
 
@@ -430,7 +430,7 @@
 ~\newline
 
 \begin{teo}[Lagrange en $\R^n$]
-	Sea $f:A\subseteq \R^n\to R$ diferenciable con $A$ \textbf{convexo} (o sea, para todo par de puntos del conjunto el segmento que los une está totalmente contenido en el conjunto). Entonces, para todo $Q,R\in A$, existe $P_0$ en el segmento que une $Q$ con $R$ tal que
+	Sea $f:A\subseteq \R^n\to \R$ diferenciable con $A$ \textbf{convexo} (o sea, para todo par de puntos del conjunto el segmento que los une está totalmente contenido en el conjunto). Entonces, para todo $Q,R\in A$, existe $P_0$ en el segmento que une $Q$ con $R$ tal que
 	\begin{center}
 		$f(Q)-f(R) = \ip{D_f(P_0)}{Q-R}$
 	\end{center}
@@ -490,7 +490,7 @@
 \begin{teo}[Función Inversa]
 	Sean $F:A\subseteq \R^n\to\R^n$ con $A$ abierto y $P\in A$. Si $F$ es $\mathds{C}^1$ en $A$ y $DF_P:\R^n\to\R^n$ es una transformación lineal inversible, entonces existen entornos abiertos $V,W$ de $P$ y $F(P)$ respectivamente tales que $F:V\to W$ es biyectiva, la inversa $F^{-1}$ es diferenciable y la además vale que, para todo $Q\in V$
 	\begin{center}
-		$DF^{-1}_F(Q) = (DF_Q)^{-1}$
+		$DF^{-1}_{F(Q)} = (DF_Q)^{-1}$
 	\end{center}
 	Con lo cual, en particular, la diferencial de $F$ es inversible en $V$.
 	\begin{proof}
@@ -1092,7 +1092,7 @@
 \end{teo}
 
 \begin{teo}[Regla de Barrow]
-	Sea $f:\R\to\R$ una función continua y sea $G:[a,b]to\R$ continua (¿¿¿Posta continua??? Para mi $G$ no tiene que ser continua) tal que $G'(x) = f(x)$ para todo $x\in[a,b]$. Entonces
+	Sea $f:\R\to\R$ una función continua y sea $G:[a,b]\to\R$ continua tal que $G'(x) = f(x)$ para todo $x\in[a,b]$. Entonces
 	\begin{center}
 		$\displaystyle G(b)-G(a) = \integral{a}{b}{f(x)}{x}$
 	\end{center}
