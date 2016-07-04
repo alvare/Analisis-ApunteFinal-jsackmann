@@ -273,14 +273,14 @@
 \end{prop}
 
 \begin{prop}
-	Sea $G:[a,b)\to\R$ una función creciente ($b$ puede ser $+\infty$). Entonces existe el límite $\displaystyle \lim_{x\to b^+}G(x)$. Además, este límite es finito si y sólo si $G$ es acotada superiormente.
+	Sea $G:[a,b)\to\R$ una función creciente ($b$ puede ser $+\infty$). Entonces existe el límite $\displaystyle \lim_{x\to b^-}G(x)$. Además, este límite es finito si y sólo si $G$ es acotada superiormente.
 	\begin{proof}
 		Sea $l=$ sup$\{G(x):x\in[a,b)\}$. Por definición de supremo, dado $\e>0$, existe $x_0 \in [a,b)$ tal que $l-G(x_0) < \e$. Si $|b-x| = b - x < \delta = b-x_0$, entonces $x\leq x_0$ y $G$ es creciente $G(x) \leq G(x_0)$. Entonces
 		\begin{center}
 			$l-G(x) \leq l-G(x_0) < \e$
 		\end{center}
 		lo que prueba que el límite existe y coincide con el supremo. En particular el límite es finito si y sólo si $G$ es acotada.
-		Entonces, $\displaystyle l=\lim_{x\to b^+}G(x)$
+		Entonces, $\displaystyle l=\lim_{x\to b^-}G(x)$
 	\end{proof}
 \end{prop}
 
